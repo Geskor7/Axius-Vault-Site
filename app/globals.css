@@ -1,0 +1,269 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   DESIGN TOKENS - OSINT Directory Theme
+   ============================================ */
+
+:root {
+  /* Darkened all color values for a darker overall theme */
+  /* Background Colors */
+  --background: oklch(0.08 0.01 270);
+  --foreground: oklch(0.85 0.01 270);
+
+  /* Card Colors */
+  --card: oklch(0.11 0.015 270);
+  --card-foreground: oklch(0.85 0.01 270);
+
+  /* Popover Colors */
+  --popover: oklch(0.11 0.015 270);
+  --popover-foreground: oklch(0.85 0.01 270);
+
+  /* Changed primary color from blue to dark black for all buttons */
+  --primary: oklch(0.2 0.02 270);
+  --primary-foreground: oklch(0.98 0 0);
+
+  /* Secondary Colors - Purple */
+  --secondary: oklch(0.5 0.22 290);
+  --secondary-foreground: oklch(0.98 0 0);
+
+  /* Muted Colors */
+  --muted: oklch(0.18 0.015 270);
+  --muted-foreground: oklch(0.5 0.01 270);
+
+  /* Accent Colors */
+  --accent: oklch(0.55 0.18 250);
+  --accent-foreground: oklch(0.98 0 0);
+
+  /* Destructive Colors */
+  --destructive: oklch(0.6 0.22 15);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  /* Border & Input Colors */
+  --border: oklch(0.22 0.02 270);
+  --input: oklch(0.11 0.015 270);
+  --ring: oklch(0.55 0.18 250);
+
+  /* Chart Colors */
+  --chart-1: oklch(0.55 0.18 250);
+  --chart-2: oklch(0.5 0.22 290);
+  --chart-3: oklch(0.6 0.2 140);
+  --chart-4: oklch(0.65 0.22 330);
+  --chart-5: oklch(0.6 0.18 60);
+
+  --radius: 0.5rem;
+
+  /* Sidebar Colors */
+  --sidebar: oklch(0.11 0.015 270);
+  --sidebar-foreground: oklch(0.85 0.01 270);
+  --sidebar-primary: oklch(0.55 0.18 250);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.5 0.22 290);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.22 0.02 270);
+  --sidebar-ring: oklch(0.55 0.18 250);
+}
+
+/* ============================================
+   DESIGN TOKENS - Axius Vault Theme
+   ============================================ */
+
+:root {
+  /* Background Colors */
+  --background: oklch(0.08 0.01 270);
+  /* Brightened foreground to near-white for better visibility */
+  --foreground: oklch(0.98 0 0);
+
+  /* Card Colors */
+  --card: oklch(0.11 0.015 270);
+  /* Brightened card text to near-white */
+  --card-foreground: oklch(0.98 0 0);
+
+  /* Popover Colors */
+  --popover: oklch(0.11 0.015 270);
+  /* Brightened popover text to near-white */
+  --popover-foreground: oklch(0.98 0 0);
+
+  /* Primary Colors - Dark black buttons with white text */
+  --primary: oklch(0.2 0.02 270);
+  --primary-foreground: oklch(0.98 0 0);
+
+  /* Secondary Colors - Purple */
+  --secondary: oklch(0.5 0.22 290);
+  --secondary-foreground: oklch(0.98 0 0);
+
+  /* Muted Colors */
+  --muted: oklch(0.18 0.015 270);
+  /* Brightened muted text from 50% to 90% lightness */
+  --muted-foreground: oklch(0.9 0.01 270);
+
+  /* Accent Colors */
+  --accent: oklch(0.55 0.18 250);
+  --accent-foreground: oklch(0.98 0 0);
+
+  /* Destructive Colors */
+  --destructive: oklch(0.6 0.22 15);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  /* Border & Input Colors */
+  --border: oklch(0.22 0.02 270);
+  --input: oklch(0.11 0.015 270);
+  --ring: oklch(0.55 0.18 250);
+
+  /* Chart Colors */
+  --chart-1: oklch(0.55 0.18 250);
+  --chart-2: oklch(0.5 0.22 290);
+  --chart-3: oklch(0.6 0.2 140);
+  --chart-4: oklch(0.65 0.22 330);
+  --chart-5: oklch(0.6 0.18 60);
+
+  --radius: 0.5rem;
+
+  /* Sidebar Colors */
+  --sidebar: oklch(0.11 0.015 270);
+  /* Brightened sidebar text to near-white */
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.55 0.18 250);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.5 0.22 290);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.22 0.02 270);
+  --sidebar-ring: oklch(0.55 0.18 250);
+}
+
+/* ============================================
+   FONT CONFIGURATION
+   ============================================ */
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    /* Restored visible grid background while keeping darker theme */
+    height: 100vh;
+    margin: 0;
+    background: #000;
+    background-image: linear-gradient(35deg, hsla(0, 0%, 2%, 1), 80%, hsla(0, 0%, 1%, 0.9)),
+      linear-gradient(transparent calc(50% - 1px), #fff 1px, transparent calc(50% + 1px) 100%),
+      linear-gradient(to right, transparent calc(50% - 1px), #fff 1px, transparent calc(50% + 1px) 100%);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+  }
+}
+
+/* ============================================
+   CUSTOM ANIMATIONS
+   ============================================ */
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.5);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@layer utilities {
+  .glow-subtle {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.05);
+  }
+
+  .glow-hover {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glow-hover:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(0.08 0.01 270);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.22 0.02 270);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.55 0.18 250);
+}
+
+/* ============================================
+   SELECTION STYLING
+   ============================================ */
+
+::selection {
+  background: oklch(0.6 0.2 250 / 0.3);
+  color: oklch(0.98 0 0);
+}
+
+::-moz-selection {
+  background: oklch(0.6 0.2 250 / 0.3);
+  color: oklch(0.98 0 0);
+}
